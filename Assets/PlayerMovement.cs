@@ -41,7 +41,15 @@ public class PlayerMovement : MonoBehaviour
             Vector3 direction = Vector3.RotateTowards(transform.forward, moveVector, rotationSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
 
-            animatorController.PlayWalk();
+            if (joystick.Horizontal > -0.5 && joystick.Vertical > -0.5 
+                && joystick.Horizontal < 0.5 && joystick.Vertical < 0.5)
+            {
+                animatorController.PlayWalk();
+            }
+            else
+            {
+                animatorController.PlayRun();
+            }
         }
 
         else if (joystick.Horizontal == 0 && joystick.Vertical == 0)

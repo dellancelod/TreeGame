@@ -15,6 +15,10 @@ public class AnimatorController : MonoBehaviour
     {
         animator.Play("Idle");
     }
+    public void PlayRun()
+    {
+        animator.Play("Run");
+    }
     public void PlayWalk()
     {
         animator.Play("Walk");
