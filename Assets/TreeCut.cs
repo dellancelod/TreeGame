@@ -5,9 +5,17 @@ using UnityEngine;
 public class TreeCut : MonoBehaviour
 {
     [SerializeField] GameObject drop;
-    [SerializeField] int hitCount = 5;
+    [SerializeField] int hitAmount = 5;
+    private int hitCount;
     [SerializeField] float spread = 2f;
+    [SerializeField] int growingSpeed = 5;
     private Vector3 shrinkScale = new Vector3(-0.01f, -0.01f, -0.01f);
+    private bool isTreeBroken = false;
+
+    private void Awake()
+    {
+        hitCount = hitAmount;
+    }
 
     public void Hit()
     {
@@ -23,9 +31,32 @@ public class TreeCut : MonoBehaviour
             go.transform.position = pos;
             transform.localScale = Vector3.Lerp(transform.localScale, shrinkScale, 0.1f);
         }
-        else
+    }
+
+    private void Update()
+    {
+        if (hitCount <= 0 && !isTreeBroken)
         {
-            //grow tree back
+            isTreeBroken = true;
+            StartCoroutine("GrowBack");
         }
+    }
+
+    private void Grow()
+    {
+        transform.localScale = new Vector3(1f,1f,1f);
+        hitCount = hitAmount;
+        isTreeBroken = false;
+    }
+
+    private IEnumerator GrowBack()
+    {
+        yield return new WaitForSeconds(growingSpeed);
+        Grow();
+    }
+
+    public bool GetBrokenState()
+    {
+        return isTreeBroken;
     }
 }

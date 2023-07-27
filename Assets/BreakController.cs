@@ -27,7 +27,8 @@ public class BreakController : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(this.transform.position, tree.transform.position) < breakDistance)
+        if (Vector3.Distance(this.transform.position, tree.transform.position) < breakDistance 
+            && !tree.GetBrokenState())
         {
             if (!isTreeBreaking)
             {
