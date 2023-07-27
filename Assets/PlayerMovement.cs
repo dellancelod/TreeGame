@@ -9,9 +9,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] 
     private FloatingJoystick joystick;
 
-    [SerializeField] 
-    private AnimatorController animatorController;
-
     [SerializeField]
     public float moveSpeed;
     [SerializeField]
@@ -21,8 +18,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveVector;
 
+    AnimatorController animatorController; 
+    BreakController breakController;
+
     private void Awake()
     {
+        animatorController = GetComponent<PlayerControllers>().GetAnimatorController();
+        breakController = GetComponent<PlayerControllers>().GetBreakController();
         rigidBody = GetComponent<Rigidbody>();
     }
 
@@ -36,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         moveVector.x = joystick.Horizontal * moveSpeed * Time.deltaTime;
         moveVector.z = joystick.Vertical * moveSpeed * Time.deltaTime;
 
-        if(joystick.Horizontal != 0 || joystick.Vertical != 0)
+        if((joystick.Horizontal != 0 || joystick.Vertical != 0) && !breakController.GetBreakingState())
         {
             Vector3 direction = Vector3.RotateTowards(transform.forward, moveVector, rotationSpeed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(direction);
@@ -52,11 +54,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        else if (joystick.Horizontal == 0 && joystick.Vertical == 0)
+        else if ((joystick.Horizontal == 0 || joystick.Vertical == 0) && !breakController.GetBreakingState())
         {
             animatorController.PlayIdle();
         }
-
         rigidBody.MovePosition(rigidBody.position + moveVector);
+
     }
 }

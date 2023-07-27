@@ -25,7 +25,13 @@ ModelImporter:
       be discarded.\n\t'LeftShoulder' is inbetween humanoid transforms and has rotation
       animation that will be discarded.\n\t'RightShoulder' has translation animation
       that will be discarded.\n\t'RightShoulder' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n"
+      and has rotation animation that will be discarded.\n\nClip 'Square Head Armature|Square
+      Head Armature|Idle' has import animation warnings that might lower retargeting
+      quality:\n\t'Neck' has translation animation that will be discarded.\n\t'LeftShoulder'
+      has translation animation that will be discarded.\n\t'LeftShoulder' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'RightShoulder'
+      has translation animation that will be discarded.\n\t'RightShoulder' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -79,8 +85,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
@@ -529,7 +535,8 @@ ModelImporter:
     - name: RightHand.Dummy
       parentName: RightHand
       position: {x: -0.000000020489097, y: 0.17315581, z: 0.000000018626451}
-      rotation: {x: -0.000000003725289, y: -0.00000020861619, z: -0.00000026822082, w: 1}
+      rotation: {x: -0.000000003725289, y: -0.00000020861619, z: -0.00000026822082,
+        w: 1}
       scale: {x: 1.0000004, y: 1.0000007, z: 0.99999976}
     - name: Spine2.Dummy
       parentName: Spine2

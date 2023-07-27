@@ -6439,6 +6439,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 32c090f3ee224684fbdd9bf00ccfeb0e, type: 2}
     - target: {fileID: 5866666021909216657, guid: ecc0c158cc8b87e4d89826af20b37d78,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: ecc0c158cc8b87e4d89826af20b37d78,
+        type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f5fc211f795716c4ba7f323484e2bb44, type: 2}
@@ -6449,15 +6454,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecc0c158cc8b87e4d89826af20b37d78,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2009472621}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecc0c158cc8b87e4d89826af20b37d78,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2009472620}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecc0c158cc8b87e4d89826af20b37d78,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2009472618}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecc0c158cc8b87e4d89826af20b37d78,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2009472625}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecc0c158cc8b87e4d89826af20b37d78,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2009472621}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ecc0c158cc8b87e4d89826af20b37d78,
         type: 3}
       insertIndex: -1
@@ -9113,7 +9122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 535338813}
-  animatorController: {fileID: 2009472621}
   moveSpeed: 5
   rotationSpeed: 5
 --- !u!54 &2009472620
@@ -9177,6 +9185,21 @@ MonoBehaviour:
   pickupZone: 1
   tree: {fileID: 48971143}
   breakSpeed: 1
+--- !u!114 &2009472625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009472617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3479afd7af107cd418eb69d412079d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorController: {fileID: 2009472621}
+  breakController: {fileID: 2009472624}
+  playerMovement: {fileID: 2009472619}
 --- !u!1001 &2050945552
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BreakController : MonoBehaviour
 {
-    PlayerMovement playerMovement;
+    AnimatorController animatorController;
     Rigidbody rb;
 
     [SerializeField] 
@@ -21,7 +21,7 @@ public class BreakController : MonoBehaviour
 
     private void Awake()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+        animatorController = GetComponent<PlayerControllers>().GetAnimatorController();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -46,8 +46,14 @@ public class BreakController : MonoBehaviour
     {
         while (isTreeBreaking)
         {
+            animatorController.PlayBreak();
             yield return new WaitForSeconds(breakSpeed);
             tree.Hit();
         }
+    }
+
+    public bool GetBreakingState()
+    {
+        return isTreeBreaking;
     }
 }

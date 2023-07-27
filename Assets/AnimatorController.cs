@@ -23,5 +23,9 @@ public class AnimatorController : MonoBehaviour
     {
         animator.Play("Walk");
     }
+    public void PlayBreak()
+    {
+        animator.Play("Break");
+    }
 
 }
