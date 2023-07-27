@@ -7,10 +7,6 @@ public class BreakController : MonoBehaviour
     AnimatorController animatorController;
     Rigidbody rb;
 
-    [SerializeField] 
-    float offsetDistance = 1f;
-    [SerializeField] 
-    float pickupZone = 1f;
     [SerializeField]
     TreeCut tree; 
     [SerializeField]

@@ -9,7 +9,9 @@ public class PlayerControllers : MonoBehaviour
     [SerializeField]
     private BreakController breakController;
     [SerializeField]
-    private PlayerMovement playerMovement;
+    private PlayerMovement playerMovement; 
+    [SerializeField]
+    private PickupItemController pickupItemController;
 
     public AnimatorController GetAnimatorController()
     {
@@ -24,5 +26,10 @@ public class PlayerControllers : MonoBehaviour
     public PlayerMovement GetPlayerMovement()
     {
         return playerMovement;
+    }
+
+    public PickupItemController GetPickupItemController()
+    {
+        return pickupItemController;
     }
 }
